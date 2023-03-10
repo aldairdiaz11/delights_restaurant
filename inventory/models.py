@@ -17,7 +17,7 @@ class MenuItem(models.Model):
 class RecipeRequirements(models.Model):
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     ingredients = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
-    quantity = models.ForeignKey(Ingredients, on_delete=models.CASCADE)
+    quantity = models.FloatField(default=0)
 
 
 class Purchase(models.Model):
