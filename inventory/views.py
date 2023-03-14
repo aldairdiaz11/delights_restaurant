@@ -4,12 +4,12 @@ from .models import Ingredients, MenuItem, RecipeRequirements, Purchase
 
 
 class Home(TemplateView):
-    template_name = ""
+    template_name = "inventory/home.html"
 
 
 class ViewIngredients(ListView):
     model = Ingredients
-    template_name = ""
+    template_name = "inventory/ingredients.html"
 
 
 class DeleteIngredients(DeleteView):
@@ -19,14 +19,14 @@ class DeleteIngredients(DeleteView):
 
 class ViewMenuItems(ListView):
     model = MenuItem
-    template_name = ""
+    template_name = "inventory/menu.html"
 
 
 class ViewPurchase(ListView):
     model = Purchase
-    template_name = ""
+    template_name = "inventory/purchases.html"
 
 
 class ViewProfit(ListView):
     model = RecipeRequirements
-    template_name = ""
+    template_name = "inventory/profit.html"

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>{% block title %}Delight's Restaurant{% endblock %}</title>
+
+</head>
+
+<body>
+  <div class="inventory">
+    <header>
+      <div class="header-first-row">
+        <img src="{% static 'inventory/inventory.png' %}"
+             alt="inventory-logo"
+             width="80px">
+        <h1>Delight's Restaurant</h1>
+      </div>
+      <nav class="navbar">
+        <a class="navbar-item" href="{% url 'home' %}">Home</a>
+        <a class="navbar-item" href="{% url 'ingredients' %}">Ingredients</a>
+        <a class="navbar-item" href="{% url 'menu-items' %}">Menu</a>
+        <a class="navbar-item" href="{% url 'purchase' %}">Purchase</a>
+        <a class="navbar-item" href="{% url 'profit' %}">Profit</a>
+      </nav>
+    </header>
+  </div>
+</body>
+<footer>
+  <p>ADiaz Inc{{ wpis.entry.lastChangeDate|date:"o" }}</p>
+</footer>
+</html>
