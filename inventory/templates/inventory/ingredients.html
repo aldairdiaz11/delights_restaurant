@@ -2,5 +2,27 @@
 {% block title %}Ingredients{% endblock %}
 
 {% block content %}
-
+  <div>
+    <h2>Ingredients</h2>
+    <table class="ingredients-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for ingredient in object_list %}
+        <tr>
+          <td>{{ ingredient.name }}</td>
+          <td>{{ ingredient.quantity }}</td>
+          <td>{{ ingredient.unit }}</td>
+          <td>{{ ingredient.price }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}

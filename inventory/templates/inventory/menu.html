@@ -2,5 +2,23 @@
 {% block title %}Menu{% endblock %}
 
 {% block content %}
-
+  <div>
+    <h2>Ingredients</h2>
+    <table class="menu-table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for menu_item in object_list %}
+        <tr>
+          <td>{{ menu_item.title }}</td>
+          <td>{{ menu_item.price }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
