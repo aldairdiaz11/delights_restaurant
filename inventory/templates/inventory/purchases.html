@@ -2,5 +2,23 @@
 {% block title %}Purchases{% endblock %}
 
 {% block content %}
-
+<div>
+    <h2>Purchases</h2>
+    <table class="purchases-table">
+      <thead>
+      <tr>
+        <th>Menu Item</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for purchase in object_list %}
+        <tr>
+          <td>{{ purchase.menu_item }}</td>
+          <td>{{ purchase.timestamp }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}

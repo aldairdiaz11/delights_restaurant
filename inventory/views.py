@@ -1,6 +1,7 @@
 from django.views.generic import ListView, TemplateView
-from django.views.generic.edit import DeleteView  # CreateView, UpdateView,
+from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from .models import Ingredients, MenuItem, RecipeRequirements, Purchase
+from .forms import AddItemToMenu, AddIngredientToInventory, AddRecipe, UpdateInventory
 
 
 class Home(TemplateView):
@@ -14,7 +15,7 @@ class ViewIngredients(ListView):
 
 class DeleteIngredients(DeleteView):
     model = Ingredients
-    template_name = ""
+    template_name = "inventory/delete_ingredient.html"
 
 
 class ViewMenuItems(ListView):
@@ -30,3 +31,27 @@ class ViewPurchase(ListView):
 class ViewProfit(ListView):
     model = RecipeRequirements
     template_name = "inventory/profit.html"
+
+
+class ViewAddItem(CreateView):
+    model = MenuItem
+    form_class = AddItemToMenu
+    template_name = ""
+
+
+class ViewAddIngredient(CreateView):
+    model = Ingredients
+    form_class = AddIngredientToInventory
+    template_name = ""
+
+
+class ViewAddRecipe(CreateView):
+    model = RecipeRequirements
+    form_class = AddRecipe
+    template_name = ""
+
+
+class ViewUpdateInventory(UpdateView):
+    model = Ingredients
+    form_class = UpdateInventory
+    template_name = ""
