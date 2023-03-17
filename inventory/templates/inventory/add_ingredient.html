@@ -1,0 +1,13 @@
+{% extends 'inventory/base.html' %} {% load static %}
+{% block title %}Delete Ingredient{% endblock %}
+
+{% block content %}
+  <h2>Add Ingredients</h2>
+  <form action="" method="post">
+    <div>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="submit">
+    </div>
+  </form>
+{% endblock %}

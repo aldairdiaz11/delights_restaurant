@@ -11,6 +11,7 @@
         <th>Quantity</th>
         <th>Unit</th>
         <th>Price</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -20,9 +21,11 @@
           <td>{{ ingredient.quantity }}</td>
           <td>{{ ingredient.unit }}</td>
           <td>{{ ingredient.price }}</td>
+        <td><a href="{% url 'delete-ingredients' ingredient.id %}">🗑</a></td>
         </tr>
       {% endfor %}
       </tbody>
     </table>
+    <a href="{% url 'add-ingredient' %}">Add ingredient</a>
   </div>
 {% endblock %}

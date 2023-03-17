@@ -1,5 +1,12 @@
 {% extends 'inventory/base.html' %} {% load static %}
+{% block title %}Deletee Ingredient{% endblock %}
 
 {% block content %}
+  <h2>Delete Ingredient</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ object.name }}</p>
+    <input type="submit" value="Confirm">
+  </form>
 
 {% endblock %}

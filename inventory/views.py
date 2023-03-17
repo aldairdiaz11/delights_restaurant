@@ -16,6 +16,7 @@ class ViewIngredients(ListView):
 class DeleteIngredients(DeleteView):
     model = Ingredients
     template_name = "inventory/delete_ingredient.html"
+    success_url = '/ingredients'
 
 
 class ViewMenuItems(ListView):
@@ -42,13 +43,13 @@ class ViewAddItem(CreateView):
 class ViewAddIngredient(CreateView):
     model = Ingredients
     form_class = AddIngredientToInventory
-    template_name = ""
+    template_name = "inventory/add_ingredient.html"
 
 
 class ViewAddRecipe(CreateView):
     model = RecipeRequirements
     form_class = AddRecipe
-    template_name = ""
+    template_name = "inventory/add_recipe.html"  # configure link in template
 
 
 class ViewUpdateInventory(UpdateView):
