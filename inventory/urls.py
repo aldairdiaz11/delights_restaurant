@@ -10,5 +10,6 @@ urlpatterns = [
     path('profit/', views.ViewProfit.as_view(), name='profit'),
     # Forms paths:
     path('add_ingredient/', views.ViewAddIngredient.as_view(), name='add-ingredient'),
-    path('add_recipe/', views.ViewAddRecipe.as_view(), name='add-recipe')
+    path('add_recipe/', views.ViewAddRecipe.as_view(), name='add-recipe'),
+    path('add_item/', views.ViewAddItem.as_view(), name='add-item')
 ]

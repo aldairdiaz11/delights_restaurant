@@ -37,7 +37,7 @@ class ViewProfit(ListView):
 class ViewAddItem(CreateView):
     model = MenuItem
     form_class = AddItemToMenu
-    template_name = ""
+    template_name = "inventory/add_item.html"
 
 
 class ViewAddIngredient(CreateView):
