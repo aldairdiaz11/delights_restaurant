@@ -1,5 +1,9 @@
+from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout, login
 from .models import Ingredients, MenuItem, RecipeRequirements, Purchase
 from .forms import AddItemToMenu, AddIngredientToInventory, AddRecipe, UpdateInventory
 
@@ -56,3 +60,14 @@ class ViewUpdateInventory(UpdateView):
     model = Ingredients
     form_class = UpdateInventory
     template_name = ""
+
+
+class SignUp(CreateView):
+    model = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = ''
+
+
+def logout_request(request):
+    logout(request)
+    return redirect('home')
