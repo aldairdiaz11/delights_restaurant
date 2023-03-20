@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout, login
+from django.contrib.auth import logout
 from .models import Ingredients, MenuItem, RecipeRequirements, Purchase
 from .forms import AddItemToMenu, AddIngredientToInventory, AddRecipe, UpdateInventory
 
@@ -64,8 +64,8 @@ class ViewUpdateInventory(UpdateView):
 
 class SignUp(CreateView):
     model = UserCreationForm
-    success_url = reverse_lazy("login")
-    template_name = ''
+    success_url = reverse_lazy("home")
+    template_name = 'registration/signup.html'
 
 
 def logout_request(request):
