@@ -14,6 +14,6 @@ urlpatterns = [
     path('add_item/', views.ViewAddItem.as_view(), name='add-item'),
     # Authentication
     path('signup/', views.SignUp.as_view(), name='signup'),
-    path('accounts/login/', include('django.contrib.auth.urls')),  # Todo complete this
+    path('accounts/login/', include('django.contrib.auth.urls')),
     path('logout/', views.logout_request, name='logout')
 ]
